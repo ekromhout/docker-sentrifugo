@@ -1,0 +1,21 @@
+version: '3'
+services:
+  sentrifugo:
+    build:
+      context: .
+      dockerfile: Dockerfile-sentrifugo
+    container_name: sentrifugo
+    ports:
+      - "8080:80"
+      - "8443:443"
+    devices:
+      - "/dev/tty:/dev/tty"
+    links:
+      - "mariadb:mariadb"
+  mariadb:
+    build:
+      context: .
+      dockerfile: Dockerfile-mariadb
+    container_name: mariadb
+    #ports:
+    #  - "3306:3306"

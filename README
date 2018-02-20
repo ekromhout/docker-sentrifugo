@@ -1,0 +1,23 @@
+# Sentrifugo and Mariadb Docker Containers
+
+This is a set of docker files to create
+an instance of sentrifugo for testing
+along with a mariadb to support it
+
+You can build and run the needed containers via
+
+docker-compose up -d
+
+If this successful you should be albe to
+walk though the configuration wizard via
+
+http://localhost:8080
+
+Substituting your docker host for localhost as required
+
+When the wizard asks for database configuraton, use
+mariadb for the hostname, sentrifugo for both the
+database name and username, and 54y6RxN7GfC7aes3 for
+the password. Username, database name, and password can
+be changed to your own values by editing Dockerfile-sentrifugo
+before running docker-compose
